@@ -13,3 +13,5 @@ Validation on 17 October 2026: five core tests passed; Next.js production build 
 A local Ollama llama3.2:3b structured-output smoke test exceeded its 90-second timeout. Generation with that model is therefore not marked verified. The application preserves OCR edits on Ollama failure; no model download is required to use OCR/manual review/export.
 
 A subsequent local llama3.2:1b smoke test returned HTTP 200 and valid title/body JSON using the same structured-output schema. Use `OLLAMA_MODEL=llama3.2:1b` if installed and preferred on smaller hardware; model wording must still be reviewed. This confirms the local Ollama protocol path, not the quality of arbitrary task drafts. GitHub CI passed for commit c8395ad.
+
+The app's actual /api/structure route was also exercised with the installed 1B model. Small models can invent requirements despite instructions, so the implementation always retains the submitted source text as the description and uses only the model's proposed title. Review titles before approval. Seven tests now pass, including a regression for Next.js normalizing the internal hostname to localhost while the user visits 127.0.0.1.

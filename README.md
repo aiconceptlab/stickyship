@@ -29,6 +29,8 @@ Install [Ollama](https://ollama.com/), run `ollama pull qwen2.5:3b` and start it
 
 ## Retry behavior and data
 
+AI proposes the task title; descriptions preserve the submitted OCR/review text instead of accepting model-invented requirements. You can edit both before approval. Small models can still produce poor titles, so review them.
+
 Each note has a UUID. `data/` stores a durable per-repository/note ledger before sending an issue request. Repeating the same reviewed note reuses its result. An uncertain network outcome stops the batch and is never blindly retried; inspect GitHub for the hidden `stickyship:` body marker before reconciling the matching ledger file. Do not delete uncertain entries until you verify no issue exists. Editing an already published note does not update its issue. Re-uploading a photo creates new UUIDs, so this is **not global duplicate detection across photographs**. Keep `data/` when restarting. Run one local server process; multi-process/serverless deployment is unsupported.
 
 Board images and review edits are browser memory only and reset on refresh. Export JSON before leaving. The ledger stores issue metadata and links locally. Token is server-only. The app binds loopback; do not expose it publicly or through a tunnel. Same-origin checks protect mutations, but this is a local single-user POC, not a hosted multi-tenant service.
