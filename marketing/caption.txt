@@ -1,0 +1,16 @@
+I photographed a whiteboard. AI turned it into a working project backlog. 📸
+
+Meet STICKYSHIP.
+
+Eight sticky notes. To Do, In Progress and Done.
+Photograph the board → extract the notes → review the drafts → approve the destination → create real GitHub Issues.
+
+Titles. Descriptions. Status labels. The original board stays beside your new issue links.
+
+Built with OpenCV.js, Tesseract.js, local Ollama and Next.js. Clear print or handwriting works best, and you can correct every note before publishing. Done is a status label; the POC doesn't automatically close issues or sync a Projects board.
+
+Free source + setup guide.
+Comment “CODE” to get the link. ↓
+
+AI Concept Lab — Testing ideas to find what's worth building.
+#AIConceptLab #BuildInPublic #GitHub #ProjectManagement #Ollama #DeveloperTools
